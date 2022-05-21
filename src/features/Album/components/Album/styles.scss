@@ -1,0 +1,14 @@
+.album{
+    &__thumbnail{
+        &>img{
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+    }
+    &__name{
+        font-weight: bold;
+    }
+    &__singer{
+        color: #ccc;
+    }
+}

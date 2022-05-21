@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { Route, Switch } from 'react-router';
+import { Link } from 'react-router-dom';
+import AlbumFeature from './features/Album';
+import ChangeColor from './features/ChangeColor';
+// import './App.css';
+import TodoFeature from './features/Todo';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p><Link to="/">Home</Link></p>
+     <p> <Link to="/todos" >Todo</Link></p>
+     <p> <Link to="/albums" >Albums</Link></p>
+      <Switch>
+      <Route path="/" component={ChangeColor}/>
+      <Route path="/todos" component={TodoFeature}/>
+      <Route path="/albums" component={AlbumFeature}/>
+      </Switch>
+      
     </div>
   );
 }
